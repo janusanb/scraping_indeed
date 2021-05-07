@@ -38,7 +38,8 @@ def extract_job_loc_summa_dates(soup):
                 dates.append(date_)
     out_df = pd.DataFrame(data = [jobs, locations, summaries, dates])
     out_df = out_df.T
-    out_df = out_df.rename(index={1:'jobs', 1:'locations', 2:'summaries', 3:'dates'})
+    out_df = out_df.rename(columns ={0:'jobs', 1:'locations', 2:'summaries', 3:'dates'})
+    print(out_df)
 
     return out_df
 
